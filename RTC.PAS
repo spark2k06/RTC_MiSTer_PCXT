@@ -6,6 +6,8 @@ function getRTCreg(reg: byte): byte;
 procedure setRTCreg(reg: byte; value: byte);
 procedure initRTC;
 function HexStr(v: Word): String;
+function BCD2Value(bcd: byte) : byte;
+
 
 const
      RTC_minute = $02;
@@ -59,6 +61,11 @@ begin
      HexStr := value;
 end;
 
+function BCD2Value(bcd: byte) : byte;
+begin
+     BCD2Value:=(bcd shr 4)*10 + (bcd and $F);
+end;
+
 var
    err: integer;
    port: word;
@@ -70,7 +77,7 @@ begin
 }
     writeln('(c) 2019 Alejandro Valero Sebastian (Wilco2009)');
     if paramcount = 0 then
-       RTC_port := $2C0
+       RTC_port := $240
     else begin
          Val(paramstr(1), port, err);
          if err=0 then

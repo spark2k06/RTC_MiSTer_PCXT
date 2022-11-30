@@ -1,11 +1,7 @@
-# RTC_micro8088
+# RTC_MiSTer_PCXT
  
 COMMANDS
 
-NOTE: Default port $2C0
-
-SETRTC.EXE <PORT> - Update RTC from system date/time
+NOTE: Default port $240
 
 GETRTC.EXE <PORT> - Update system date/time from RTC
-
-BATRTC.EXE <PORT> - Check RTC battery status
