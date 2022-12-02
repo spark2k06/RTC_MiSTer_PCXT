@@ -77,7 +77,7 @@ begin
 }
     writeln('(c) 2019 Alejandro Valero Sebastian (Wilco2009)');
     if paramcount = 0 then
-       RTC_port := $240
+       RTC_port := $2C0
     else begin
          Val(paramstr(1), port, err);
          if err=0 then
